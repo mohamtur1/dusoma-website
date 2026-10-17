@@ -1,0 +1,7 @@
+# Hugging Face ZeroGPU Requirements
+# IMPORTANT for ZeroGPU Spaces:
+# Do NOT pin gradio, huggingface_hub, or spaces versions.
+# Let the Hugging Face platform resolve compatible runtime versions.
+
+spaces
+gradio

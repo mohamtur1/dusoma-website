@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dusoma Foundation | Grounded AI & Sustainable Poverty Reduction</title>
+  <meta name="description" content="Dusoma Foundation empowers rural African communities through community-led development and grounded, low-bandwidth AI advisory systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #065f46;         /* Deep Forest Emerald */
+      --primary-light: #0d9488;   /* Bright Teal */
+      --primary-dark: #022c22;    /* Dark Pine */
+      --secondary: #1e3a8a;       /* Deep Navy */
+      --secondary-light: #2563eb; /* Vibrant Blue */
+      --accent: #f59e0b;          /* Warm Sun Gold */
+      --accent-light: #fef3c7;    /* Soft Amber */
+      --bg: #f8fafc;              /* Soft Off-White */
+      --surface: #ffffff;         /* Pure White */
+      --text-main: #0f172a;       /* Slate 900 */
+      --text-muted: #475569;      /* Slate 600 */
+      --border: #e2e8f0;          /* Slate 200 */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Banner */
+    .top-badge-strip {
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: 0.02em;
+    }
+    .top-badge-strip span {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      margin-right: 8px;
+      font-weight: 700;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--accent) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(6, 95, 70, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700 !important;
+      font-size: 0.9rem !important;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(13, 148, 136, 0.35);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text-main);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 90px 0 80px;
+      background: radial-gradient(circle at 10% 20%, rgba(13, 148, 136, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(30, 58, 138, 0.06) 0%, transparent 40%),
+                  var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--accent-light);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #92400e;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-pill .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--secondary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(6, 95, 70, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(6, 95, 70, 0.35);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--secondary);
+      border: 2px solid var(--border);
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--secondary);
+      background: rgba(30, 58, 138, 0.04);
+      transform: translateY(-2px);
+    }
+
+    /* Hero AI Live Preview Card */
+    .hero-preview-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-terminal-header {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-family: monospace;
+    }
+
+    .card-terminal-header .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .card-terminal-header .dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+
+    .card-terminal-body {
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .chat-bubble {
+      margin-bottom: 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .chat-user {
+      background: #f1f5f9;
+      color: var(--text-main);
+      border-left: 4px solid var(--secondary-light);
+    }
+
+    .chat-user strong {
+      display: block;
+      color: var(--secondary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .chat-ai {
+      background: #f0fdf4;
+      color: #14532d;
+      border-left: 4px solid var(--primary);
+    }
+
+    .chat-ai strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .chat-action-footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .status-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      display: inline-block;
+    }
+
+    /* Stats Ribbon */
+    .stats-ribbon {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Section Utility */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+
+    .section-pill {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      background: rgba(13, 148, 136, 0.1);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Mission Section */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(13, 148, 136, 0.4);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* 5 Poverty Focus Pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .pillar-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pillar-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pillar-card ul {
+      margin-top: 14px;
+      padding-left: 20px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .pillar-card ul li {
+      margin-bottom: 6px;
+    }
+
+    /* AI / LLM Feature Showcase Section */
+    .ai-section {
+      background: linear-gradient(180deg, #0f172a 0%, #091e1d 100%);
+      color: #fff;
+      position: relative;
+    }
+
+    .ai-section h2, .ai-section h3 {
+      color: #fff;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ai-features-list {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .ai-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .ai-icon-check {
+      background: rgba(20, 184, 166, 0.2);
+      color: #2dd4bf;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .ai-feature-item h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #f1f5f9;
+    }
+
+    .ai-feature-item p {
+      font-size: 0.88rem;
+      color: #94a3b8;
+    }
+
+    .ai-terminal-box {
+      background: #020617;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .ai-terminal-title {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .prompt-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+    }
+
+    .prompt-box .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #f59e0b;
+      margin-bottom: 4px;
+    }
+
+    .ai-response-box {
+      background: rgba(13, 148, 136, 0.15);
+      border-left: 3px solid #14b8a6;
+      border-radius: 6px;
+      padding: 14px;
+      font-size: 0.85rem;
+      color: #ccfbf1;
+      line-height: 1.5;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .team-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .team-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .recruiting-badge {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      background: var(--accent-light);
+      color: #92400e;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    /* Call to Action Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--secondary) 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 60px 48px;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      margin: 40px auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner h2 {
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .cta-banner p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto 32px;
+      color: #d1fae5;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      background: #ffffff;
+      color: var(--primary-dark);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-white:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: #fff;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-white:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a:hover {
+      color: #34d399;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+      .ai-grid {
+        grid-template-columns: 1fr;
+      }
+      .mission-grid, .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .mission-grid, .pillars-grid, .stats-grid, .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-banner {
+        padding: 40px 20px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="top-badge-strip">
+    <span>UPAN ALLIANCE</span> Dusoma Foundation Relaunch Initiative &bull; Funding Evaluation Horizon: Jan 5, 2027 &bull; Live LLM Prototype Active
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">
+        <div class="logo-mark">D</div>
+        <span>Dusoma Foundation</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#pillars">Poverty Focus</a></li>
+        <li><a href="#ai-prototype">AI Initiative</a></li>
+        <li><a href="#team">Dream Team</a></li>
+        <li><a href="#funding">Partnership</a></li>
+        <li>
+          <!-- PRIMARY DEMO LINK: UPDATE HREF TO YOUR HUGGING FACE SPACE OR RENDER URL -->
+          <a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+            <span>Try AI Prototype</span>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <div class="hero-pill">
+          <span class="dot"></span>
+          <span>Next-Gen Grounded Intelligence for Africa</span>
+        </div>
+        <h1>
+          Eradicating Rural Poverty Through <span class="highlight">Grounded AI</span> &amp; Grassroots Action.
+        </h1>
+        <p class="hero-subtitle">
+          Dusoma Foundation bridges the last-mile knowledge gap in Africa. We build lightweight, context-aware AI advisory engines that provide actionable agronomy, water security, health, and microfinance solutions without heavy infrastructure barriers.
+        </p>
+        <div class="hero-actions">
+          <!-- LIVE AI DEMO LINK -->
+          <a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <span>Launch Live LLM Prototype</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#ai-prototype" class="btn-secondary">
+            <span>Explore Architecture</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Preview Card -->
+      <div class="hero-preview-card">
+        <div class="card-terminal-header">
+          <div class="dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </div>
+          <span>dusoma-llm-v1.0 • huggingface-zerogpu</span>
+        </div>
+        <div class="card-terminal-body">
+          <div class="chat-bubble chat-user">
+            <strong>Smallholder Farmer Query</strong>
+            "Fall armyworm has attacked my young maize crop. I have no money for chemical pesticides. What can I do immediately?"
+          </div>
+          <div class="chat-bubble chat-ai">
+            <strong>Dusoma Advisory Engine</strong>
+            "Immediate zero-cost action: 1) Crush mature Neem leaves in water, soak for 24h, filter and spray directly into maize funnels. 2) Apply a pinch of clean dry sand or wood ash into whorls to physically suffocate larvae without harming the plant."
+          </div>
+        </div>
+        <div class="chat-action-footer">
+          <span class="status-badge">Model Ready &bull; ZeroGPU Active</span>
+          <a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank" style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-light);">Test full query &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact & Scope Ribbon -->
+  <section class="stats-ribbon">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>5</h3>
+          <p>Core Poverty Reduction Pillars</p>
+        </div>
+        <div class="stat-item">
+          <h3>&lt; 512 MB</h3>
+          <p>Ultra-Lightweight Advisory Footprint</p>
+        </div>
+        <div class="stat-item">
+          <h3>0 Cost</h3>
+          <p>Accessible Grassroots Recommendations</p>
+        </div>
+        <div class="stat-item">
+          <h3>Jan 5</h3>
+          <p>Funding Horizon Alignment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="section" id="mission">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-pill">Our Core Mandate</span>
+        <h2 class="section-title">Built for Rural Reality, Not Cloud Illusions</h2>
+        <p class="section-desc">
+          Western foundation models fail African villages because they assume continuous 5G, formal banking, and chemical stores on every corner. Dusoma Foundation engineers solutions tailored for local realities.
+        </p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h3>Grassroots Self-Reliance</h3>
+          <p>
+            We empower smallholder farmers, women-led cooperatives, and youth leaders with low-cost techniques that rely on locally available biomass, tools, and social capital.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Edge &amp; Low-Bandwidth AI</h3>
+          <p>
+            Deploying domain-specific intelligence that functions on basic smartphones, offline caching, and free-tier cloud micro-instances without incurring prohibitive token expenses.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>UPAN Strategic Partnership</h3>
+          <p>
+            Working alongside UPAN to institutionalize transparent governance, community field pilots, and verified poverty alleviation roadmaps across Sub-Saharan Africa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Poverty Reduction Pillars -->
+  <section class="section" id="pillars" style="background: #f1f5f9;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-pill">Action Domains</span>
+        <h2 class="section-title">5 Pillars of Grounded Poverty Eradication</h2>
+        <p class="section-desc">
+          Our AI model and field operations focus strictly on the direct levers that lift households above the multidimensional poverty line.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-tag">Pillar 01 &bull; Food Security</span>
+          <h3>🌾 Climate-Smart Agriculture</h3>
+          <p>Protecting harvests from drought and erratic rain with indigenous agronomy.</p>
+          <ul>
+            <li>Organic pest management (Neem, companion planting)</li>
+            <li>Zero-chemical weevil control using PICS hermetic bags</li>
+            <li>Drought-resistant tubers (Cassava, Sorghum, Cowpeas)</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-tag">Pillar 02 &bull; Water Security</span>
+          <h3>💧 Clean Water &amp; WASH</h3>
+          <p>Ending waterborne disease cycles through community-level purification.</p>
+          <ul>
+            <li>SODIS (Solar Water Disinfection) using clear PET bottles</li>
+            <li>Multi-layer bio-sand and gravel filtration</li>
+            <li>Borehole maintenance &amp; Village Water Committees</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-tag">Pillar 03 &bull; Financial Inclusion</span>
+          <h3>💰 Grassroots Microfinance</h3>
+          <p>Building local safety nets through Village Savings and Loan Associations.</p>
+          <ul>
+            <li>VSLA constitution design &amp; 3-lockbox security</li>
+            <li>Mobile money micro-ledgering (MoMo, Orange, M-Pesa)</li>
+            <li>Emergency social funds to avoid predatory debt traps</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-tag">Pillar 04 &bull; Primary Care</span>
+          <h3>🩺 Rural Health First Response</h3>
+          <p>Preventative health and triage where clinical access is hours away.</p>
+          <ul>
+            <li>Correct WHO Oral Rehydration Salts (ORS) formulation</li>
+            <li>Malaria prevention &amp; fever danger sign identification</li>
+            <li>Maternal nutrition and infant immunisation timelines</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-tag">Pillar 05 &bull; Human Capital</span>
+          <h3>📚 Vocational &amp; Offline Learning</h3>
+          <p>Empowering youth with technical livelihoods without waiting for grid power.</p>
+          <ul>
+            <li>Kiwix and Kolibri offline digital library deployments</li>
+            <li>Solar-powered study hubs &amp; apprentice pairing</li>
+            <li>Agribusiness bookkeeping and market price monitoring</li>
+          </ul>
+        </div>
+
+        <div class="pillar-card" style="background: linear-gradient(135deg, rgba(6, 95, 70, 0.08) 0%, rgba(30, 58, 138, 0.08) 100%);">
+          <span class="pillar-tag">Integrated Advisory</span>
+          <h3>🤖 Cross-Domain Synergy</h3>
+          <p>Poverty challenges don't exist in silos. Our prototype links health to clean water, and agricultural surplus directly to VSLA reinvestment.</p>
+          <div style="margin-top: 20px;">
+            <a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank" class="nav-cta-btn" style="font-size: 0.85rem !important;">Launch Advisory Engine &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI / LLM Prototype Showcase Section -->
+  <section class="section ai-section" id="ai-prototype">
+    <div class="container">
+      <div class="ai-grid">
+        <div>
+          <span class="ai-badge">🚀 Grounded AI Prototype</span>
+          <h2>A Specialized Advisory Model Engineered for Rural Impact</h2>
+          <p style="color: #cbd5e1; margin-bottom: 24px; font-size: 1.05rem;">
+            Generic LLMs hallucinate complex western solutions. Dusoma AI is calibrated strictly against African low-resource environments, delivering clear, actionable, and zero-cost solutions.
+          </p>
+
+          <ul class="ai-features-list">
+            <li class="ai-feature-item">
+              <div class="ai-icon-check">&#10003;</div>
+              <div>
+                <h4>Zero-GPU &amp; Edge Hardware Optimized</h4>
+                <p>Designed to run on Hugging Face ZeroGPU with instant fallbacks for 512MB RAM free instances like Render.</p>
+              </div>
+            </li>
+            <li class="ai-feature-item">
+              <div class="ai-icon-check">&#10003;</div>
+              <div>
+                <h4>Multilingual &amp; Vernacular Awareness</h4>
+                <p>Recognizes localized terminology across Krio, Swahili, Hausa, French, and rural agricultural phrasing.</p>
+              </div>
+            </li>
+            <li class="ai-feature-item">
+              <div class="ai-icon-check">&#10003;</div>
+              <div>
+                <h4>Evidence-Based Grassroots Playbooks</h4>
+                <p>Grounded in verified WHO, FAO, and community microfinance operational guides.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <!-- REPLACE WITH YOUR HF SPACE URL -->
+            <a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background: linear-gradient(135deg, #10b981 0%, #0d9488 100%);">
+              <span>Open Hugging Face Space</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <!-- REPLACE WITH YOUR RENDER URL -->
+            <a href="https://dusoma-poverty-ai.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.2);">
+              <span>Render Backup Link</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="ai-terminal-box">
+          <div class="ai-terminal-title">
+            <span>DUSOMA ADVISORY RUNTIME // LIVE SESSION</span>
+            <span style="color: #4ade80;">● ACTIVE</span>
+          </div>
+
+          <div class="prompt-box">
+            <div class="label">Sample Prompt &bull; Clean Water</div>
+            <div style="color: #f8fafc;">"Our well water has turned muddy after flooding. How do we purify it safely without expensive chlorine kits?"</div>
+          </div>
+
+          <div class="ai-response-box">
+            <strong>DUSOMA ADVISORY ENGINE:</strong><br>
+            <strong>Step 1: Rapid Clarification (Moringa/Alum):</strong> Crush dried Moringa oleifera seed powder or a pea-sized piece of potash alum into the water. Let sediment settle for 2 hours.<br>
+            <strong>Step 2: Bio-Sand Filtration:</strong> Decant clear top water through clean cloth into a 3-layer sand and gravel bucket.<br>
+            <strong>Step 3: SODIS (Solar Disinfection):</strong> Fill clear transparent PET bottles. Place on a corrugated tin roof under bright sun for 6 hours (or 2 days if overcast). UVA + heat destroys 99.9% of pathogens.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-pill">Execution Leadership</span>
+        <h2 class="section-title">The Dusoma "Dream Team"</h2>
+        <p class="section-desc">
+          Combining field-tested community leadership with technical AI engineering. We are actively assembling key specialists for our 2027 scale-up.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">MT</div>
+          <h3>Mohamed Malik Turay</h3>
+          <div class="team-role">Founder &bull; Executive Director &bull; AI Lead</div>
+          <p>Full-stack developer and AI engineer working with UPAN. Leading Dusoma Foundation's technological vision and poverty reduction prototype development.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">ML</div>
+          <h3>Machine Learning Engineer</h3>
+          <div class="team-role">Model Optimization &bull; ZeroGPU</div>
+          <p>Specialist in lightweight LLM quantization, retrieval-augmented generation (RAG), and offline edge-runtime architectures.</p>
+          <span class="recruiting-badge">In Formation / Sprint Slot</span>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">DC</div>
+          <h3>Data Curator &amp; Linguist</h3>
+          <div class="team-role">African Dialects &bull; Agronomy Datasets</div>
+          <p>Curating rural agricultural corpora, indigenous plant knowledge, and multilingual phrasing (Krio, Hausa, Swahili).</p>
+          <span class="recruiting-badge">In Formation / Sprint Slot</span>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%);">FO</div>
+          <h3>Field Operations Lead</h3>
+          <div class="team-role">Community Pilot &bull; WASH &amp; VSLA</div>
+          <p>Direct liaison with rural cooperatives, village elders, and women-led VSLA groups for ground-truth validation.</p>
+          <span class="recruiting-badge">UPAN Field Network</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funding & Call to Action Section -->
+  <section class="section" id="funding" style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Partner With Us for Relaunch Impact</h2>
+        <p>
+          With our critical organizational milestones behind us and the <strong>January 5 funding decision</strong> fast approaching, we have demonstrated real technical capability. Join hands with Dusoma Foundation and UPAN.
+        </p>
+        <div class="cta-buttons">
+          <!-- Primary CTA for funding partners -->
+          <a href="mailto:contact@dusoma.org?subject=Dusoma%20Foundation%20Funding%20%26%20Partnership" class="btn-white">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span>Request Partnership Deck</span>
+          </a>
+          <!-- Live AI Prototype link -->
+          <a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank" rel="noopener noreferrer" class="btn-outline-white">
+            <span>Test Working AI Prototype</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">
+            <div class="logo-mark">D</div>
+            <span>Dusoma Foundation</span>
+          </div>
+          <p>
+            Dedicated to eradicating multidimensional poverty across Africa through verified grassroots intervention and grounded, accessible artificial intelligence.
+          </p>
+          <p style="margin-top: 12px; font-size: 0.82rem; color: #64748b;">
+            Affiliated with United People's Action Network (UPAN).
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Focus Areas</h4>
+          <ul>
+            <li><a href="#pillars">Climate-Smart Agriculture</a></li>
+            <li><a href="#pillars">Clean Water &amp; WASH</a></li>
+            <li><a href="#pillars">Grassroots Microfinance</a></li>
+            <li><a href="#pillars">Preventive Rural Health</a></li>
+            <li><a href="#pillars">Offline Vocational Ed</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="https://huggingface.co/spaces/Dusoma/poverty-reduction-ai" target="_blank">HF ZeroGPU Space</a></li>
+            <li><a href="https://dusoma-poverty-ai.onrender.com" target="_blank">Render Free Backup</a></li>
+            <li><a href="https://github.com/mohamtur1/dusoma-website" target="_blank">GitHub Repository</a></li>
+            <li><a href="#ai-prototype">Architecture Overview</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Governance</h4>
+          <ul>
+            <li><a href="#team">Leadership Team</a></li>
+            <li><a href="#funding">Jan 5 Funding Horizon</a></li>
+            <li><a href="mailto:contact@dusoma.org">Executive Contact</a></li>
+            <li><a href="#">Privacy &amp; Ethics</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Dusoma Foundation. All rights reserved. Relaunch Initiative.
+        </div>
+        <div>
+          Engineered by Mohamed Malik Turay in partnership with UPAN.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Mobile nav toggle helper
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '76px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = '#ffffff';
+        links.style.padding = '20px';
+        links.style.borderBottom = '1px solid #e2e8f0';
+        links.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1)';
+      }
+    }
+  </script>
+</body>
+</html>
